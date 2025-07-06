@@ -20,6 +20,7 @@ class Noteview extends StatelessWidget {
           onTap: (){
             showDialog(context: context, 
             builder: (context)=> AlertDialog(
+              backgroundColor: Colors.white,
               title: Text("Delete this ?", style: TextStyle(fontSize: width*0.07),),
               content: Text("Note ${note.title} will be deleted !", style: TextStyle(fontSize: width*0.04),),
               actions: [
@@ -29,19 +30,21 @@ class Noteview extends StatelessWidget {
                   ElevatedButton(onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> Mainpage()));
                     onNoteDeleted(index);
-                  }, child: Text("Yes", style: TextStyle(fontSize: width*0.04, fontWeight: FontWeight.w500, color: Colors.black),)),
+                  }, child: Text("Yes", style: TextStyle(fontSize: width*0.04, fontWeight: FontWeight.w500, color: Colors.black),),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.white),),
                   ElevatedButton(onPressed: (){
                     Navigator.pop(context);
-                  }, child: Text("No", style: TextStyle(fontSize: width*0.04, fontWeight: FontWeight.w500, color: Colors.black)))
+                  }, child: Text("No", style: TextStyle(fontSize: width*0.04, fontWeight: FontWeight.w500, color: Colors.black)), 
+                    style: ElevatedButton.styleFrom( backgroundColor: Colors.white),)
                   ],
                 )
                 
               ],
-            ));
+            ),);
           },
           child: Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Icon(Icons.delete),
+            child: Icon(Icons.delete, color: Colors.black,),
           ),
         )
       ],),
@@ -65,6 +68,7 @@ class Noteview extends StatelessWidget {
           ),
         ),
       ),
+      backgroundColor: Colors.white,
     );
   }
 }

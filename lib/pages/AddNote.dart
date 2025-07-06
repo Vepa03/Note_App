@@ -49,6 +49,7 @@ class _AddNoteState extends State<AddNote> {
           ),
         ),
       ),
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           if(titleController.text.isEmpty){
@@ -64,7 +65,7 @@ class _AddNoteState extends State<AddNote> {
           Navigator.of(context).pop();
         
         },
-        child: Icon(Icons.save),),
+        child: Icon(Icons.save), foregroundColor: Colors.black, backgroundColor: Colors.amber,),
     );
   }
 }

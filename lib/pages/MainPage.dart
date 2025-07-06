@@ -19,17 +19,13 @@ class _MainpageState extends State<Mainpage> {
     loadNotes();
 
   }
-
-  
-  
-  
   List<Note> notes = List.empty(growable: true);
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(title: Text("Note", style: TextStyle(fontSize: width*0.07, color: Colors.black, fontWeight: FontWeight.w400),),),
+      appBar: AppBar(title: Text("Notes", style: TextStyle(fontSize: width*0.07, color: Colors.black, fontWeight: FontWeight.w500),),),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView.builder(
@@ -40,6 +36,7 @@ class _MainpageState extends State<Mainpage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> Noteview(note: notes[index], onNoteDeleted: onNoteDeleted, index: index,)));
               },
               child: Card(
+                color: Colors.white,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,10 +51,11 @@ class _MainpageState extends State<Mainpage> {
             );
           }),
       ),
+      backgroundColor: Colors.white,
       floatingActionButton: 
         FloatingActionButton(onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=> AddNote(onNewNoteCreated: onNewNoteCreated,)));
-        }, child: Icon(Icons.add),),
+        }, child: Icon(Icons.add), foregroundColor: Colors.black, backgroundColor: Colors.amber, splashColor: Colors.black26,),
     );
   }
 
