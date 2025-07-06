@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' show StatefulWidget, State, BuildContext, Widget, EdgeInsets, TextEditingController, MediaQuery, FontWeight, Colors, TextStyle, Text, AppBar, InputBorder, InputDecoration, TextFormField, TextInputType, Column, Padding, Icons, Icon, Navigator, FloatingActionButton, Scaffold;
 import 'package:note_app/models/note_model.dart' show Note;
 
@@ -22,27 +23,30 @@ class _AddNoteState extends State<AddNote> {
       appBar: AppBar(title: Text("Add Note", style: TextStyle(fontSize: width*0.07, fontWeight: FontWeight.w400, color: Colors.black))),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            TextFormField(
-              controller: titleController,
-              style: TextStyle(fontSize: 28, color: Colors.black),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Title", hintStyle: TextStyle(fontSize: width*0.07),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: titleController,
+                style: TextStyle(fontSize: 28, color: Colors.black),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Title", hintStyle: TextStyle(fontSize: width*0.07),
+                ),
               ),
-            ),
-            TextFormField(
-              controller: bodyController,
-              style: TextStyle(fontSize: 20, color: Colors.black),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Body", hintStyle: TextStyle(fontSize: width*0.05, color: Colors.grey),
+              TextFormField(
+                controller: bodyController,
+                style: TextStyle(fontSize: 20, color: Colors.black),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Body", hintStyle: TextStyle(fontSize: width*0.05, color: Colors.grey),
+                ),
+                maxLines: null,
+                keyboardType: TextInputType.multiline,
               ),
-              maxLines: null,
-              keyboardType: TextInputType.multiline,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

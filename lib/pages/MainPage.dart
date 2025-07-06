@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/pages/AddNote.dart' show AddNote;
+import 'package:note_app/pages/NoteView.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
@@ -34,14 +35,21 @@ class _MainpageState extends State<Mainpage> {
         child: ListView.builder(
           itemCount: notes.length,
           itemBuilder: (context, index){
-            return Card(
-              child: Column(
-                children: [
-                  Text(notes[index].title, style: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold)),
-                  Text(notes[index].body, style: TextStyle(fontSize: 18, color: const Color.fromARGB(255, 38, 37, 37)), 
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,)
-                ],
+            return InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Noteview(note: notes[index], onNoteDeleted: onNoteDeleted, index: index,)));
+              },
+              child: Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(notes[index].title, style: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold)),
+                    Text(notes[index].body, style: TextStyle(fontSize: 18, color: const Color.fromARGB(255, 38, 37, 37)), 
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,)
+                  ],
+                ),
               ),
             );
           }),
