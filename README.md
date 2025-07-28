@@ -9,7 +9,7 @@ You can quickly add, edit, and delete your notes.
 
 | Home | Add Note | Notes List |
 |------|----------|------------|
-| ![Home](screenshots/home.png) | ![Add Note](screenshots/add_note.png) | ![List](screenshots/list.png) |
+| ![Home](<img src="https://github.com/user-attachments/assets/f1676eae-e610-49b5-b550-781d6e0839c8" width="400" alt="App Screenshot">) | ![Add Note](screenshots/add_note.png) | ![List](screenshots/list.png) |
 
 > 📌 Tip: Create a `screenshots` folder in your project and upload your images there.  
 > (On GitHub: **Add file → Upload files**)
