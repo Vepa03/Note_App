@@ -7,11 +7,11 @@ You can quickly add, edit, and delete your notes.
 
 ## 📸 Screenshots
 
-| Home | Add Note |
+| Home Page | Add Note Page |
 |------|----------|
 | <img src="https://github.com/user-attachments/assets/578e8acb-e1a5-4e7b-8363-c3f728a95bca" width="300"> | <img src="https://github.com/user-attachments/assets/ae2c1cdd-e860-41b5-ad4d-102fbef3b783" width="300"> |
 
-| Delete Note | Notes List |
+| Delete Note Page | Notes List Page|
 |------------|-----------|
 | <img src="https://github.com/user-attachments/assets/25221c8a-684b-4286-8ca6-0178a6d4e584" width="300"> | <img src="https://github.com/user-attachments/assets/649114fd-2e48-4203-a19a-0d8860a671c4" width="300"> |
 
